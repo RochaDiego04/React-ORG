@@ -4,10 +4,16 @@ import Header from "./components/Header/Header";
 import Formulario from "./components/Formulario/Formulario";
 import MiOrg from "./components/MiOrg";
 import Equipo from "./components/Equipo";
+import Footer from "./components/Footer"
 
 function App() {
   const [mostrarFormulario, actualizarMostrar] = useState(false);
-  const [colaboradores, actualizarColaboradores] = useState([]);
+  const [colaboradores, actualizarColaboradores] = useState([{
+    equipo: "FrontEnd",
+    foto:"https://github.com/RochaDiego04.png",
+    nombre:"Diego Rocha",
+    puesto:"Desarrollador"
+  }]);
 
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario);
@@ -74,6 +80,7 @@ function App() {
             colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)} />
         ))
       }
+      <Footer/>
     </div>
   );
 }
