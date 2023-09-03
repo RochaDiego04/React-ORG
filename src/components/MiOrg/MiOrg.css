@@ -1,0 +1,31 @@
+.orgSection {
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    align-items: center; 
+    width: 100%;
+  }
+  
+  .title {
+    color: #6278F7;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 0; 
+    text-align: center; 
+    position: relative;
+  }
+  
+  .title::after {
+    content: "";
+    display: block;
+    width: 320px;
+    height: 4px;
+    background-color: #6278F7;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  
+  .orgSection img {
+    justify-self: end; /* Align img to the end (right) of its column */
+  }
