@@ -1,31 +1,46 @@
 .orgSection {
-    display: grid;
-    grid-template-columns: 1fr auto; 
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  place-items: center;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .orgSection {
+    display: flex;
+    justify-content: space-between; 
     align-items: center; 
     width: 100%;
+    margin-bottom: 70px;
+    text-align: center;
   }
-  
+}
+
+.title {
+  color: #6278F7;
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
   .title {
-    color: #6278F7;
-    font-size: 40px;
-    font-weight: 400;
-    margin: 0; 
-    text-align: center; 
-    position: relative;
-  }
-  
-  .title::after {
-    content: "";
-    display: block;
-    width: 320px;
-    height: 4px;
-    background-color: #6278F7;
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-  
-  .orgSection img {
-    justify-self: end; /* Align img to the end (right) of its column */
-  }
+    position: relative; 
+    left: 50%; 
+    transform: translateX(-50%); 
+  }  
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 320px;
+  height: 4px;
+  background-color: #6278F7;
+  margin: 0 auto; 
+}
+
+.orgSection img {
+  max-width: 100%; 
+  height: auto;
+}
