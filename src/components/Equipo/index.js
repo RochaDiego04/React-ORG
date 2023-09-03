@@ -1,16 +1,28 @@
 import "./Equipo.css";
+import Colaborador from "../Colaborador";
 
 const Equipo = (props) => {
   //Destructuring
   const { titulo, colorPrimario, colorSecundario } = props.datos;
+  const { colaboradores } = props;
 
   return (
-    <section className="equipo" style={{ backgroundColor: colorSecundario }}>
-        <h3 style={{ borderBottomColor: colorPrimario }}>
-            {titulo}
-        </h3>
-      <div className="colaboradores"></div>
-    </section>
+    // condicion ternaria, mostrar si hay colaboradores en el equipo
+    <> 
+      {colaboradores.length > 0 && (
+        <section
+          className="equipo"
+          style={{ backgroundColor: colorSecundario }}
+        >
+          <h3 style={{ borderBottomColor: colorPrimario }}>{titulo}</h3>
+          <div className="colaboradores">
+            {colaboradores.map((colaborador, index) => (
+              <Colaborador datos={colaborador} key={index} />
+            ))}
+          </div>
+        </section>
+      )}
+    </>
   );
 };
 
